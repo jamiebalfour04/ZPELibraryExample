@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LibPrint">
+    <output-path>$USER_HOME$/Dropbox/Programs/JARs</output-path>
+    <root id="archive" name="LibPrint.jar">
+      <element id="module-output" name="ZPELibraryExample" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
