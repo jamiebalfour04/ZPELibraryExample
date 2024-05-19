@@ -1,4 +1,5 @@
 import jamiebalfour.zpe.core.ZPERuntimeEnvironment;
+import jamiebalfour.zpe.core.ZPEStructure;
 import jamiebalfour.zpe.interfaces.ZPECustomFunction;
 import jamiebalfour.zpe.interfaces.ZPELibrary;
 
@@ -10,27 +11,22 @@ public class Plugin implements ZPELibrary {
   public class display implements ZPECustomFunction{
 
     @Override
-    public int RequiredPermissionLevel() {
+    public int getRequiredPermissionLevel() {
       return 0;
     }
 
     @Override
-    public String ManualHeader() {
+    public String getManualHeader() {
       return "";
     }
 
     @Override
-    public String ManualEntry() {
+    public String getManualEntry() {
       return "";
     }
 
     @Override
-    public String CommandString() {
-      return "display";
-    }
-
-    @Override
-    public String[] ParameterNames() {
+    public String[] getParameterNames() {
       return new String[0];
     }
 
@@ -41,46 +37,37 @@ public class Plugin implements ZPELibrary {
     }
 
     @Override
-    public byte ReturnType() {
+    public byte getReturnType() {
       return 0;
     }
 
     @Override
-    public int MinimumParameters() {
+    public int getMinimumParameters() {
       return 0;
     }
 
-    @Override
-    public String ImportLines(String s) {
-      return "";
-    }
-
-    @Override
-    public String ConvertToLanguage(String s, String s1) {
-      return "";
-    }
   }
 
   @Override
-  public ZPECustomFunction[] functions() {
+  public Map<String, ZPECustomFunction> getFunctions() {
 
-    ZPECustomFunction[] funcs = new ZPECustomFunction[1];
-    funcs[0] = new display();
+    Map<String, ZPECustomFunction> funcs = new HashMap<String, ZPECustomFunction>();
+    funcs.put("display", new display());
     return funcs;
   }
 
   @Override
-  public Map<String, Class<?>> objects() {
+  public Map<String, Class<? extends ZPEStructure>> getObjects() {
     return null;
   }
 
   @Override
-  public String GetName() {
-    return "LibPrint";
+  public String getName() {
+    return "libZPE-Print";
   }
 
   @Override
-  public String GetVersionInfo() {
+  public String getVersionInfo() {
     return "1.0";
   }
 }
