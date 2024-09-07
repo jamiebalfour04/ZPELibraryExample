@@ -1,7 +1,10 @@
+import jamiebalfour.zpe.core.ZPEFunction;
 import jamiebalfour.zpe.core.ZPERuntimeEnvironment;
 import jamiebalfour.zpe.core.ZPEStructure;
 import jamiebalfour.zpe.interfaces.ZPECustomFunction;
 import jamiebalfour.zpe.interfaces.ZPELibrary;
+import jamiebalfour.zpe.interfaces.ZPEType;
+import jamiebalfour.zpe.types.ZPEBoolean;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,9 +34,9 @@ public class Plugin implements ZPELibrary {
     }
 
     @Override
-    public Object MainMethod(HashMap<String, Object> hashMap, ZPERuntimeEnvironment zpeRuntimeEnvironment) {
+    public ZPEType MainMethod(HashMap<String, Object> hashMap, ZPERuntimeEnvironment zpeRuntimeEnvironment, ZPEFunction zpeFunction) {
       System.out.println("This display function is working");
-      return true;
+      return new ZPEBoolean(true);
     }
 
     @Override
